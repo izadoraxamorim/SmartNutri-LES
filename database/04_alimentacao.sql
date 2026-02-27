@@ -13,6 +13,7 @@ VALUES
 (3, '2026-02-27', 56.0, 1.74, 'Ganhar massa magra'), 
 (7, '2025-12-05', 88.0, 1.80, 'Emagrecer'), 
 (1, '2026-01-15', 55.9, 1.63, 'Perder gordura e ganhar massa muscular'), 
+(5, '2025-11-30', 72.0, 1.77, 'Paciente tem intolerância a lactose'),
 (7, '2025-02-05', 85.0, 1.80, 'Paciente emagreceu. Deixar em manutenção.');
 
 INSERT INTO plano_alimentar 
