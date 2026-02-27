@@ -1,32 +1,55 @@
--- SELECTs
-SELECT * FROM paciente;
+-- Inserção de paciente
+INSERT INTO paciente (nome, email, telefone, data_nascimento)
+VALUES ('Paciente Teste', 'teste@email.com', '16999990000', '1990-01-01');
 
-SELECT * FROM paciente
-WHERE nome ILIKE '%juliana%';
+-- Inserção com nome NULL
+INSERT INTO paciente (nome, email)
+VALUES (NULL, 'erro@email.com');
 
-SELECT * FROM paciente
-WHERE id_paciente = 6;
+-- Inserção com nome vazio
+INSERT INTO paciente (nome, email)
+VALUES ('', 'erro2@email.com');
 
--- UPDATE
+-- Update
 UPDATE paciente
-SET telefone = '16-99418-5787'
+SET objetivo = 'Teste Update'
 WHERE id_paciente = 1;
 
-UPDATE paciente
-SET objetivo = 'Emagrecer'
-WHERE id_paciente = 6;
+-- Delete
+DELETE FROM paciente
+WHERE id_paciente = 1;
 
--- INSERT consulta
+--Inserção de consulta
 INSERT INTO consulta (id_paciente, data_consulta, peso, altura, observacoes)
-VALUES (6, '2026-02-25', 49.0, 1.60, 'Paciente deseja ganhar massa muscular, mas tem dificuldade de comer');
+VALUES (2, '2026-02-27', 70.5, 1.70, 'Consulta válida');
 
--- INSERT plano
-INSERT INTO plano_alimentar (id_paciente, data_inicio, data_fim, descricao_plano, calorias_totais)
-VALUES (6, '2026-02-25', '2026-04-25', 'Hipertrofia', 2100);
+-- Teste de erro, inserir consulta sem paciente
+INSERT INTO consulta (id_paciente, data_consulta)
+VALUES (9999, '2026-02-27');
 
--- DELETE testes
-DELETE FROM paciente WHERE id_paciente = 3;
+--Ver consultas
+SELECT * FROM consulta WHERE id_paciente = 2;
+
+--Deletar 
 DELETE FROM paciente WHERE id_paciente = 2;
 
-SELECT * FROM consulta;
-SELECT * FROM plano_alimentar;
+--Testar On Cascade
+SELECT * FROM consulta WHERE id_paciente = 2;
+
+--Inserção de plano alimentar
+INSERT INTO plano_alimentar
+(id_paciente, data_inicio, descricao_plano, calorias_totais)
+VALUES (3, '2026-02-01', 'Plano Teste', 2000);
+
+--Inserção de erro, plano sem paciente
+INSERT INTO plano_alimentar
+(id_paciente, data_inicio)
+VALUES (9999, '2026-02-01');
+
+
+--Buscar paciente por nome
+SELECT * FROM paciente
+WHERE nome ILIKE '%ana%';
+
+-- Contagem total de pacientes
+SELECT COUNT(*) FROM paciente;
