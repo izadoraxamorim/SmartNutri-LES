@@ -1,0 +1,33 @@
+{
+  "name": "smartnutri-les",
+  "version": "1.0.0",
+  "description": "SmartNutri - Laboratório de Engenharia de Software",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izadoraxamorim/SmartNutri-LES.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/izadoraxamorim/SmartNutri-LES/issues"
+  },
+  "homepage": "https://github.com/izadoraxamorim/SmartNutri-LES#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "pg": "^8.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
